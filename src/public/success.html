@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - YE Tickets</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .success-container {
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .success-icon {
+            font-size: 80px;
+            color: #00FF00;
+            margin-bottom: 30px;
+        }
+        .success-message {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .success-details {
+            color: #888;
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-container">
+            <div class="success-icon">✓</div>
+            <h1 class="success-message">Payment Successful!</h1>
+            <p class="success-details">
+                Your tickets have been confirmed.<br>
+                You will receive a confirmation email shortly.
+            </p>
+            <button onclick="window.location.href='/'" class="btn-primary" style="max-width: 300px; margin: 0 auto;">
+                Back to Home
+            </button>
+        </div>
+    </div>
+</body>
+</html>
