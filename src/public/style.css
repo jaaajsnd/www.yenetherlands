@@ -53,6 +53,129 @@ body {
     margin-top: 20px;
 }
 
+/* Seating Plan Section */
+.seating-plan-section {
+    margin: 80px 0;
+    padding: 40px 20px;
+    background: #1a1a1a;
+    border-radius: 20px;
+}
+
+.seating-plan-section h3 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.seating-subtitle {
+    text-align: center;
+    color: #888;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+.seating-plan-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #0a0a0a;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid #2d2d2d;
+}
+
+.seating-plan-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.seating-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.seat-zone {
+    position: absolute;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    border-radius: 5px;
+}
+
+.seat-zone:hover {
+    background: rgba(255, 165, 0, 0.3);
+    border-color: #FFA500;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.seat-zone:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFA500;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+    z-index: 20;
+}
+
+/* Legend */
+.legend {
+    margin-top: 40px;
+    padding: 30px;
+    background: #0a0a0a;
+    border-radius: 15px;
+}
+
+.legend h4 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FFA500;
+}
+
+.legend-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background: #1a1a1a;
+    border-radius: 8px;
+}
+
+.legend-color {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #2d2d2d;
+}
+
+.legend-color.vip { background: #00FF00; }
+.legend-color.platina { background: #00FFFF; }
+.legend-color.goud { background: #FFA500; }
+.legend-color.zilver { background: #C0C0C0; }
+.legend-color.brons { background: #CD7F32; }
+.legend-color.staanplaats { background: #FF6600; }
+.legend-color.mindervaliden { background: #90EE90; }
+
 .tickets-section {
     margin: 60px 0;
 }
@@ -248,5 +371,18 @@ footer {
     
     .tickets-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .seating-plan-section {
+        padding: 20px 10px;
+    }
+    
+    .legend-items {
+        grid-template-columns: 1fr;
+    }
+    
+    .seat-zone:hover::after {
+        font-size: 10px;
+        padding: 3px 6px;
     }
 }
