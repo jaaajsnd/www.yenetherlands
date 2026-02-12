@@ -359,6 +359,25 @@ footer {
     border-top: 1px solid #2d2d2d;
 }
 
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #FFA500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff8c00;
+    text-decoration: underline;
+}
+
 @media (max-width: 768px) {
     .brand {
         font-size: 60px;
@@ -384,5 +403,10 @@ footer {
     .seat-zone:hover::after {
         font-size: 10px;
         padding: 3px 6px;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
     }
 }
