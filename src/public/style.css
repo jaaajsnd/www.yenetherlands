@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #0a0a0a;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+
+.brand {
+    font-size: 120px;
+    font-weight: 900;
+    letter-spacing: 20px;
+    margin-bottom: 30px;
+    background: linear-gradient(45deg, #ffffff, #888888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.event-info h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+}
+
+.date {
+    font-size: 24px;
+    color: #FFA500;
+    margin: 15px 0;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #888;
+    margin-top: 20px;
+}
+
+.tickets-section {
+    margin: 60px 0;
+}
+
+.tickets-section h3 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.ticket-card {
+    background: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid #2d2d2d;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    border-color: #FFA500;
+}
+
+.ticket-header {
+    padding: 20px;
+    text-align: center;
+    color: #000;
+    font-weight: bold;
+}
+
+.ticket-header h4 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ticket-body {
+    padding: 30px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFA500;
+    margin-bottom: 20px;
+}
+
+.ticket-body ul {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.ticket-body ul li {
+    padding: 8px 0;
+    color: #ccc;
+}
+
+.ticket-body ul li:before {
+    content: "✓ ";
+    color: #FFA500;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.ticket-body button {
+    width: 100%;
+    padding: 15px;
+    background: #FFA500;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.ticket-body button:hover {
+    background: #ff8c00;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.modal-content {
+    background-color: #1a1a1a;
+    margin: 5% auto;
+    padding: 40px;
+    border: 2px solid #FFA500;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #FFA500;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    background: #2d2d2d;
+    border: 1px solid #444;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #FFA500;
+}
+
+.total {
+    margin: 30px 0;
+    padding: 20px;
+    background: #2d2d2d;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background: #FFA500;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #ff8c00;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #888;
+    margin-top: 80px;
+    border-top: 1px solid #2d2d2d;
+}
+
+@media (max-width: 768px) {
+    .brand {
+        font-size: 60px;
+        letter-spacing: 10px;
+    }
+    
+    .event-info h2 {
+        font-size: 24px;
+    }
+    
+    .tickets-grid {
+        grid-template-columns: 1fr;
+    }
+}
