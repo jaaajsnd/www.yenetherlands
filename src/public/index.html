@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YE - GelreDome 2026 Tickets</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="brand">YE</h1>
+                <div class="event-info">
+                    <h2>GELREDOME ARNHEM</h2>
+                    <p class="date">Saturday, June 6, 2026</p>
+                    <p class="tagline">First European performance since 2014 • First Netherlands show since 2013</p>
+                </div>
+            </div>
+        </header>
+
+        <section class="tickets-section">
+            <h3>Select Your Tickets</h3>
+            
+            <div class="tickets-grid">
+                <div class="ticket-card" data-type="vip">
+                    <div class="ticket-header" style="background: #00FF00;">
+                        <h4>VIP Arrangement</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€299.00</p>
+                        <ul>
+                            <li>Premium seating</li>
+                            <li>Exclusive VIP area access</li>
+                            <li>Complimentary drinks</li>
+                            <li>Limited availability</li>
+                        </ul>
+                        <button onclick="selectTicket('vip')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="platina">
+                    <div class="ticket-header" style="background: #00FFFF;">
+                        <h4>Zitplaats Platina</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€199.00</p>
+                        <ul>
+                            <li>Best view guaranteed</li>
+                            <li>Premium seating sections</li>
+                            <li>Perfect stage view</li>
+                        </ul>
+                        <button onclick="selectTicket('platina')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="goud">
+                    <div class="ticket-header" style="background: #FFA500;">
+                        <h4>Zitplaats Goud</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€149.00</p>
+                        <ul>
+                            <li>Excellent seating</li>
+                            <li>Great stage visibility</li>
+                            <li>Comfortable seats</li>
+                        </ul>
+                        <button onclick="selectTicket('goud')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="zilver">
+                    <div class="ticket-header" style="background: #C0C0C0;">
+                        <h4>Zitplaats Zilver</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€99.00</p>
+                        <ul>
+                            <li>Good seating</li>
+                            <li>Clear stage view</li>
+                            <li>Value for money</li>
+                        </ul>
+                        <button onclick="selectTicket('zilver')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="brons">
+                    <div class="ticket-header" style="background: #CD7F32;">
+                        <h4>Zitplaats Brons</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€79.00</p>
+                        <ul>
+                            <li>Standard seating</li>
+                            <li>Affordable option</li>
+                            <li>Full concert experience</li>
+                        </ul>
+                        <button onclick="selectTicket('brons')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="staanplaats">
+                    <div class="ticket-header" style="background: #FF6600;">
+                        <h4>Staanplaatsen</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€89.00</p>
+                        <ul>
+                            <li>Standing area</li>
+                            <li>Close to the stage</li>
+                            <li>Ultimate concert vibe</li>
+                        </ul>
+                        <button onclick="selectTicket('staanplaats')">Select</button>
+                    </div>
+                </div>
+
+                <div class="ticket-card" data-type="mindervaliden">
+                    <div class="ticket-header" style="background: #90EE90;">
+                        <h4>Mindervaliden</h4>
+                    </div>
+                    <div class="ticket-body">
+                        <p class="price">€89.00</p>
+                        <ul>
+                            <li>Accessible seating</li>
+                            <li>Wheelchair friendly</li>
+                            <li>Companion seat included</li>
+                        </ul>
+                        <button onclick="selectTicket('mindervaliden')">Select</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="orderModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Complete Your Order</h3>
+                <form id="orderForm">
+                    <div class="form-group">
+                        <label>Ticket Type</label>
+                        <input type="text" id="ticketTypeName" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label>Quantity</label>
+                        <select id="quantity" required>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="total">
+                        <strong>Total: €<span id="totalPrice">0.00</span></strong>
+                    </div>
+                    <button type="submit" class="btn-primary">Proceed to Payment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 YE GelreDome Concert. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
