@@ -15,6 +15,41 @@ const closeBtn = document.getElementsByClassName('close')[0];
 const orderForm = document.getElementById('orderForm');
 const quantitySelect = document.getElementById('quantity');
 
+// Interactive seating plan
+document.addEventListener('DOMContentLoaded', function() {
+    const seatZones = document.querySelectorAll('.seat-zone');
+    
+    seatZones.forEach(zone => {
+        zone.addEventListener('click', function() {
+            const ticketType = this.dataset.type;
+            selectTicket(ticketType);
+            
+            // Scroll naar tickets sectie
+            document.querySelector('.tickets-section').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Highlight selected ticket card
+            highlightTicketCard(ticketType);
+        });
+    });
+});
+
+function highlightTicketCard(ticketType) {
+    // Remove previous highlights
+    document.querySelectorAll('.ticket-card').forEach(card => {
+        card.style.border = '2px solid #2d2d2d';
+    });
+    
+    // Highlight selected card
+    const selectedCard = document.querySelector(`.ticket-card[data-type="${ticketType}"]`);
+    if (selectedCard) {
+        selectedCard.style.border = '2px solid #FFA500';
+        selectedCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
 function selectTicket(ticketType) {
     selectedTicketType = ticketType;
     const ticket = TICKET_TYPES[ticketType];
@@ -50,6 +85,12 @@ orderForm.addEventListener('submit', async (e) => {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     
+    // Show loading state
+    const submitButton = orderForm.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Processing...';
+    submitButton.disabled = true;
+    
     try {
         const response = await fetch('/api/create-payment', {
             method: 'POST',
@@ -70,9 +111,13 @@ orderForm.addEventListener('submit', async (e) => {
             window.location.href = data.paymentUrl;
         } else {
             alert('Er is een fout opgetreden. Probeer het opnieuw.');
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
         }
     } catch (error) {
         console.error('Error:', error);
         alert('Er is een fout opgetreden. Probeer het opnieuw.');
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
     }
 });
