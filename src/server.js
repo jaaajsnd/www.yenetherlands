@@ -92,8 +92,4 @@ app.listen(PORT, () => {
 });
 ```
 
-**.env**
-```
-MOLLIE_API_KEY=test_jouwmollieapikey
-BASE_URL=http://localhost:3000
-PORT=3000
+
