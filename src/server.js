@@ -21,49 +21,25 @@ const mollieClient = createMollieClient({
 
 // Ticket Types Configuration
 const TICKET_TYPES = {
-  vip: { 
-    name: 'VIP Arrangement', 
-    price: 299.00, 
-    color: '#00FF00',
-    description: 'Premium seating with exclusive VIP area access and complimentary drinks'
-  },
-  platina: { 
-    name: 'Zitplaats Platina', 
-    price: 199.00, 
-    color: '#00FFFF',
-    description: 'Best view guaranteed with premium seating sections'
-  },
-  goud: { 
-    name: 'Zitplaats Goud', 
-    price: 149.00, 
-    color: '#FFA500',
-    description: 'Excellent seating with great stage visibility'
+  staanplaats: { 
+    name: 'General Admission (Standing)', 
+    price: 89.00
   },
   zilver: { 
-    name: 'Zitplaats Zilver', 
-    price: 99.00, 
-    color: '#C0C0C0',
-    description: 'Good seating with clear stage view'
+    name: 'Rang 1 - Silver', 
+    price: 99.00
   },
   brons: { 
-    name: 'Zitplaats Brons', 
-    price: 79.00, 
-    color: '#CD7F32',
-    description: 'Standard seating for full concert experience'
-  },
-  staanplaats: { 
-    name: 'Staanplaatsen', 
-    price: 89.00, 
-    color: '#FF6600',
-    description: 'Standing area close to the stage for ultimate concert vibe'
+    name: 'Rang 2', 
+    price: 79.00
   },
   mindervaliden: { 
-    name: 'Mindervaliden', 
-    price: 89.00, 
-    color: '#90EE90',
-    description: 'Accessible seating with wheelchair friendly access and companion seat'
+    name: 'Accessible Seating', 
+    price: 89.00
   }
 };
+
+const SERVICE_CHARGE = 3.95;
 
 // Routes
 
@@ -105,12 +81,16 @@ app.post('/api/create-payment', async (req, res) => {
     }
 
     const ticket = TICKET_TYPES[ticketType];
-    const amount = (ticket.price * parsedQuantity).toFixed(2);
+    const ticketTotal = ticket.price * parsedQuantity;
+    const serviceChargeTotal = SERVICE_CHARGE * parsedQuantity;
+    const totalAmount = (ticketTotal + serviceChargeTotal).toFixed(2);
 
     console.log('Creating payment:', {
       ticketType,
       quantity: parsedQuantity,
-      amount,
+      ticketPrice: ticket.price,
+      serviceCharge: SERVICE_CHARGE,
+      totalAmount,
       email,
       name
     });
@@ -119,7 +99,7 @@ app.post('/api/create-payment', async (req, res) => {
     const payment = await mollieClient.payments.create({
       amount: {
         currency: 'EUR',
-        value: amount
+        value: totalAmount
       },
       description: `YE GelreDome 2026 - ${ticket.name} x${parsedQuantity}`,
       redirectUrl: `${process.env.BASE_URL}/success.html`,
@@ -130,6 +110,8 @@ app.post('/api/create-payment', async (req, res) => {
         email,
         name,
         ticketName: ticket.name,
+        ticketPrice: ticket.price,
+        serviceCharge: SERVICE_CHARGE,
         eventDate: '2026-06-06',
         venue: 'GelreDome Arnhem'
       }
@@ -140,7 +122,7 @@ app.post('/api/create-payment', async (req, res) => {
     res.json({ 
       paymentUrl: payment.getCheckoutUrl(),
       paymentId: payment.id,
-      amount: amount
+      amount: totalAmount
     });
 
   } catch (error) {
@@ -174,6 +156,7 @@ app.post('/api/webhook', async (req, res) => {
       console.log('Customer:', payment.metadata.name);
       console.log('Email:', payment.metadata.email);
       console.log('Tickets:', payment.metadata.quantity, 'x', payment.metadata.ticketName);
+      console.log('Total amount:', payment.amount.value, payment.amount.currency);
       
       // TODO: Hier kun je:
       // - Tickets genereren en per email versturen
@@ -226,7 +209,17 @@ app.get('/', (req, res) => {
 
 // Catch-all route for SPA
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  // Check if file exists in public folder
+  const filePath = path.join(__dirname, 'public', req.path);
+  if (filePath.endsWith('.html') || filePath.endsWith('.css') || filePath.endsWith('.js')) {
+    res.sendFile(filePath, (err) => {
+      if (err) {
+        res.sendFile(path.join(__dirname, 'public', 'index.html'));
+      }
+    });
+  } else {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  }
 });
 
 // Error handling middleware
