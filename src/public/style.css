@@ -5,435 +5,217 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #0a0a0a;
-    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #1a1a1a;
     line-height: 1.6;
 }
 
-.container {
-    max-width: 1400px;
+.shop-container {
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
 }
 
-.hero {
+.shop-header {
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-    border-radius: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
+    padding-top: 40px;
 }
 
-.brand {
-    font-size: 120px;
-    font-weight: 900;
-    letter-spacing: 20px;
-    margin-bottom: 30px;
-    background: linear-gradient(45deg, #ffffff, #888888);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.shop-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.step-indicator {
+    font-size: 24px;
+    color: #888;
+    font-weight: 400;
+}
+
+.event-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.event-header {
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.event-date-box {
+    background: #000;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+    text-align: center;
+    min-width: 80px;
+    height: fit-content;
+}
+
+.event-month {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.event-day {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1;
 }
 
 .event-info h2 {
-    font-size: 32px;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 10px;
-    letter-spacing: 4px;
+    color: #1a1a1a;
 }
 
-.date {
-    font-size: 24px;
-    color: #FFA500;
-    margin: 15px 0;
-}
-
-.event-time {
-    font-size: 18px;
-    color: #00FFFF;
-    margin: 10px 0;
-    font-weight: bold;
-}
-
-.tagline {
-    font-size: 16px;
-    color: #888;
-    margin-top: 20px;
-}
-
-/* About Section */
-.about-section {
-    margin: 80px 0;
-    padding: 60px 40px;
-    background: #1a1a1a;
-    border-radius: 20px;
-}
-
-.about-section h3 {
-    text-align: center;
-    font-size: 42px;
-    margin-bottom: 40px;
-    color: #FFA500;
-}
-
-.about-content {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    text-align: center;
-}
-
-.about-content p {
-    font-size: 18px;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    color: #ccc;
-}
-
-.albums-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.album-card {
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.album-card:hover {
-    transform: translateY(-10px);
-}
-
-.album-cover {
-    padding: 40px 20px;
-    border-radius: 15px;
-    text-align: center;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
-.album-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
-.album-year {
+.event-datetime {
     font-size: 14px;
-    color: #ddd;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    color: #666;
+    margin-bottom: 5px;
 }
 
-/* Seating Plan Section */
-.seating-plan-section {
-    margin: 80px 0;
-    padding: 40px 20px;
-    background: #1a1a1a;
-    border-radius: 20px;
-}
-
-.seating-plan-section h3 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
-
-.seating-subtitle {
-    text-align: center;
+.event-location {
+    font-size: 14px;
     color: #888;
-    margin-bottom: 40px;
-    font-size: 18px;
 }
 
-.seating-plan-container {
-    position: relative;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: #0a0a0a;
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid #2d2d2d;
+.ticket-section {
+    border-bottom: 1px solid #e5e5e5;
 }
 
-.seating-plan-image {
+.ticket-section:last-child {
+    border-bottom: none;
+}
+
+.section-toggle {
     width: 100%;
-    height: auto;
-    display: block;
-}
-
-.seating-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
-
-.seat-zone {
-    position: absolute;
-    cursor: pointer;
-    pointer-events: all;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-    border-radius: 5px;
-}
-
-.seat-zone:hover {
-    background: rgba(255, 165, 0, 0.3);
-    border-color: #FFA500;
-    transform: scale(1.05);
-    z-index: 10;
-}
-
-.seat-zone:hover::after {
-    content: attr(title);
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #FFA500;
-    color: #000;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    white-space: nowrap;
-    z-index: 20;
-}
-
-/* Legend */
-.legend {
-    margin-top: 40px;
-    padding: 30px;
-    background: #0a0a0a;
-    border-radius: 15px;
-}
-
-.legend h4 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #FFA500;
-}
-
-.legend-items {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.legend-item {
+    padding: 20px 30px;
+    background: transparent;
+    border: none;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    background: #1a1a1a;
-    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: background 0.2s;
 }
 
-.legend-color {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    border: 2px solid #2d2d2d;
+.section-toggle:hover {
+    background: #f9f9f9;
 }
 
-.legend-color.vip { background: #9b59b6; }
-.legend-color.platina { background: #00FFFF; }
-.legend-color.goud { background: #FFA500; }
-.legend-color.zilver { background: #C0C0C0; }
-.legend-color.brons { background: #CD7F32; }
-.legend-color.staanplaats { background: #FF6600; }
-.legend-color.mindervaliden { background: #90EE90; }
-
-.tickets-section {
-    margin: 60px 0;
+.toggle-icon {
+    font-size: 14px;
+    transition: transform 0.3s;
 }
 
-.tickets-section h3 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
+.section-toggle.active .toggle-icon {
+    transform: rotate(180deg);
 }
 
-.tickets-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.ticket-card {
-    background: #1a1a1a;
-    border-radius: 15px;
+.ticket-list {
+    max-height: 0;
     overflow: hidden;
-    transition: transform 0.3s ease;
-    border: 2px solid #2d2d2d;
+    transition: max-height 0.3s ease;
 }
 
-.ticket-card:hover {
-    transform: translateY(-5px);
-    border-color: #FFA500;
+.ticket-list.open {
+    max-height: 2000px;
+    padding: 20px 30px 30px;
 }
 
-.ticket-header {
-    padding: 20px;
-    text-align: center;
-    color: #000;
-    font-weight: bold;
-}
-
-.ticket-header h4 {
-    font-size: 22px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.ticket-body {
-    padding: 30px;
-}
-
-.price {
-    font-size: 36px;
-    font-weight: bold;
-    color: #FFA500;
+.section-description {
+    font-size: 14px;
+    color: #666;
     margin-bottom: 20px;
-}
-
-.ticket-body ul {
-    list-style: none;
-    margin: 20px 0;
-}
-
-.ticket-body ul li {
-    padding: 8px 0;
-    color: #ccc;
-}
-
-.ticket-body ul li:before {
-    content: "✓ ";
-    color: #FFA500;
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-.ticket-body button {
-    width: 100%;
     padding: 15px;
-    background: #FFA500;
-    color: #000;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    background: #f9f9f9;
+    border-radius: 6px;
 }
 
-.ticket-body button:hover {
-    background: #ff8c00;
+.ticket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #f0f0f0;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
+.ticket-item:last-child {
+    border-bottom: none;
 }
 
-.modal-content {
-    background-color: #1a1a1a;
-    margin: 5% auto;
-    padding: 40px;
-    border: 2px solid #FFA500;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 500px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: #fff;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    color: #FFA500;
-    font-weight: bold;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    background: #2d2d2d;
-    border: 1px solid #444;
-    border-radius: 8px;
-    color: #fff;
+.ticket-details h3 {
     font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #FFA500;
-}
-
-.total {
-    margin: 30px 0;
-    padding: 20px;
-    background: #2d2d2d;
-    border-radius: 8px;
+.info-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #ddd;
+    border-radius: 50%;
     text-align: center;
-    font-size: 24px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+    margin-left: 5px;
 }
 
-.btn-primary {
-    width: 100%;
-    padding: 15px;
-    background: #FFA500;
-    color: #000;
+.ticket-price {
+    font-size: 14px;
+    color: #666;
+}
+
+.ticket-status {
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
     border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
     cursor: pointer;
-    transition: background 0.3s ease;
+    white-space: nowrap;
+    transition: all 0.2s;
 }
 
-.btn-primary:hover {
-    background: #ff8c00;
+.ticket-status.sold-out {
+    background: #e5e5e5;
+    color: #666;
+    cursor: not-allowed;
+}
+
+.ticket-status.available {
+    background: #000;
+    color: #fff;
+}
+
+.ticket-status.available:hover {
+    background: #333;
 }
 
 footer {
     text-align: center;
     padding: 40px 20px;
     color: #888;
-    margin-top: 80px;
-    border-top: 1px solid #2d2d2d;
+    margin-top: 60px;
+    border-top: 1px solid #e5e5e5;
 }
 
 .footer-links {
@@ -445,65 +227,68 @@ footer {
 }
 
 .footer-links a {
-    color: #FFA500;
+    color: #666;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 14px;
+    transition: color 0.2s;
 }
 
 .footer-links a:hover {
-    color: #ff8c00;
+    color: #000;
     text-decoration: underline;
 }
 
+footer p {
+    font-size: 14px;
+    color: #888;
+}
+
 @media (max-width: 768px) {
-    .brand {
-        font-size: 60px;
-        letter-spacing: 10px;
+    .shop-container {
+        padding: 10px;
     }
-    
-    .event-info h2 {
+
+    .shop-header h1 {
         font-size: 24px;
     }
-    
-    .event-time {
-        font-size: 14px;
+
+    .step-indicator {
+        font-size: 18px;
     }
-    
-    .tickets-grid {
-        grid-template-columns: 1fr;
+
+    .event-header {
+        flex-direction: column;
+        padding: 20px;
     }
-    
-    .albums-grid {
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
+
+    .event-date-box {
+        width: fit-content;
     }
-    
-    .album-cover {
-        height: 150px;
-        padding: 20px 10px;
+
+    .event-info h2 {
+        font-size: 18px;
     }
-    
-    .album-title {
-        font-size: 14px;
-    }
-    
-    .about-content p {
+
+    .section-toggle {
+        padding: 15px 20px;
         font-size: 16px;
     }
-    
-    .seating-plan-section {
-        padding: 20px 10px;
+
+    .ticket-list.open {
+        padding: 15px 20px 20px;
     }
-    
-    .legend-items {
-        grid-template-columns: 1fr;
+
+    .ticket-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
-    
-    .seat-zone:hover::after {
-        font-size: 10px;
-        padding: 3px 6px;
+
+    .ticket-status {
+        width: 100%;
+        text-align: center;
     }
-    
+
     .footer-links {
         flex-direction: column;
         gap: 15px;
