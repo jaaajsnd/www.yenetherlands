@@ -7,38 +7,56 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .success-container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 60px 40px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
-            padding: 100px 20px;
         }
         .success-icon {
             font-size: 80px;
-            color: #00FF00;
+            color: #00c853;
             margin-bottom: 30px;
         }
         .success-message {
-            font-size: 32px;
+            font-size: 28px;
+            font-weight: 600;
             margin-bottom: 20px;
+            color: #1a1a1a;
         }
         .success-details {
-            color: #888;
-            font-size: 18px;
+            color: #666;
+            font-size: 16px;
             margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .btn-home {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .btn-home:hover {
+            background: #333;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="success-container">
-            <div class="success-icon">✓</div>
-            <h1 class="success-message">Payment Successful!</h1>
-            <p class="success-details">
-                Your tickets have been confirmed.<br>
-                You will receive a confirmation email shortly.
-            </p>
-            <button onclick="window.location.href='/'" class="btn-primary" style="max-width: 300px; margin: 0 auto;">
-                Back to Home
-            </button>
-        </div>
+    <div class="success-container">
+        <div class="success-icon">✓</div>
+        <h1 class="success-message">Payment Successful!</h1>
+        <p class="success-details">
+            Your tickets have been confirmed.<br>
+            You will receive a confirmation email with your tickets shortly at the provided email address.
+        </p>
+        <a href="/" class="btn-home">Back to Tickets</a>
     </div>
 </body>
 </html>
+```
