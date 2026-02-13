@@ -21,22 +21,14 @@ const mollieClient = createMollieClient({
 
 // Ticket Types Configuration
 const TICKET_TYPES = {
-  staanplaats: { 
-    name: 'General Admission (Standing)', 
-    price: 89.00
-  },
-  zilver: { 
-    name: 'Rang 1 - Silver', 
-    price: 99.00
-  },
-  brons: { 
-    name: 'Rang 2', 
-    price: 79.00
-  },
-  mindervaliden: { 
-    name: 'Accessible Seating', 
-    price: 89.00
-  }
+  ga_left: { name: 'General Admission (Left) - Entrance B/M', price: 189.00 },
+  ga_right: { name: 'General Admission (Right) - Entrance E/L', price: 189.00 },
+  golden_circle: { name: 'Golden Circle - Entrance B/E/L/M', price: 289.00 },
+  front_p1: { name: 'Front Seats P1', price: 349.00 },
+  rang1_gold: { name: 'Rang 1 - Gold', price: 279.00 },
+  rang1_platina: { name: 'Rang 1 - Platina', price: 299.00 },
+  vip_gold: { name: 'VIP Gold - Hoofdingang', price: 549.00 },
+  vip_platina: { name: 'VIP Platina - Hoofdingang', price: 699.00 }
 };
 
 const SERVICE_CHARGE = 3.95;
@@ -207,9 +199,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Catch-all route for SPA
+// Catch-all route
 app.get('*', (req, res) => {
-  // Check if file exists in public folder
   const filePath = path.join(__dirname, 'public', req.path);
   if (filePath.endsWith('.html') || filePath.endsWith('.css') || filePath.endsWith('.js')) {
     res.sendFile(filePath, (err) => {
