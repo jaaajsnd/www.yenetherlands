@@ -3,280 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YE - GelreDome 2026 Tickets</title>
+    <title>YE Live Concert - GelreDome Tickets</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="hero">
-            <div class="hero-content">
-                <h1 class="brand">YE</h1>
+    <div class="shop-container">
+        <div class="shop-header">
+            <h1>Tickets <span class="step-indicator">1 / 3</span></h1>
+        </div>
+
+        <div class="event-card">
+            <div class="event-header">
+                <div class="event-date-box">
+                    <div class="event-month">JUN.</div>
+                    <div class="event-day">6</div>
+                </div>
                 <div class="event-info">
-                    <h2>GELREDOME ARNHEM</h2>
-                    <p class="date">Saturday, June 6, 2026</p>
-                    <p class="event-time">🕐 Doors Open: 19:00 | Show Starts: 21:00</p>
-                    <p class="tagline">First European performance since 2014 • First Netherlands show since 2013</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- ABOUT YE SECTION -->
-        <section class="about-section">
-            <h3>About YE</h3>
-            <div class="about-content">
-                <p>Kanye West, now known as YE, is one of the most influential artists of our generation. With over 160 million records sold worldwide and 24 Grammy Awards, YE has shaped modern hip-hop and popular culture like no other.</p>
-                
-                <p>From groundbreaking albums like "The College Dropout" and "My Beautiful Dark Twisted Fantasy" to cultural phenomena like "Yeezus" and "The Life of Pablo", YE has consistently pushed boundaries and redefined what it means to be an artist.</p>
-                
-                <p>This exclusive performance at GelreDome marks his triumphant return to Europe after more than a decade. Expect an unforgettable night featuring classics, deep cuts and surprises from one of music's greatest innovators.</p>
-            </div>
-
-            <div class="albums-grid">
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #8B4513 0%, #D2691E 100%);">
-                        <div class="album-title">The College Dropout</div>
-                        <div class="album-year">2004</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 100%);">
-                        <div class="album-title">Late Registration</div>
-                        <div class="album-year">2005</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);">
-                        <div class="album-title">Graduation</div>
-                        <div class="album-year">2007</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #000080 0%, #4169E1 100%);">
-                        <div class="album-title">808s & Heartbreak</div>
-                        <div class="album-year">2008</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #8B0000 0%, #FF0000 100%);">
-                        <div class="album-title">My Beautiful Dark Twisted Fantasy</div>
-                        <div class="album-year">2010</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #000000 0%, #333333 100%);">
-                        <div class="album-title">Yeezus</div>
-                        <div class="album-year">2013</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #FF8C00 0%, #FFA500 100%);">
-                        <div class="album-title">The Life of Pablo</div>
-                        <div class="album-year">2016</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #32CD32 0%, #90EE90 100%);">
-                        <div class="album-title">Ye</div>
-                        <div class="album-year">2018</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #4B0082 0%, #9370DB 100%);">
-                        <div class="album-title">Jesus Is King</div>
-                        <div class="album-year">2019</div>
-                    </div>
-                </div>
-                <div class="album-card">
-                    <div class="album-cover" style="background: linear-gradient(135deg, #1C1C1C 0%, #3C3C3C 100%);">
-                        <div class="album-title">Donda</div>
-                        <div class="album-year">2021</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="seating-plan-section">
-            <h3>GelreDome Seating Plan</h3>
-            <p class="seating-subtitle">Click on a section to view available tickets</p>
-            
-            <div class="seating-plan-container">
-                <img src="seating-plan.jpg" alt="GelreDome Seating Plan" class="seating-plan-image" id="seatingPlanImage">
-                
-                <div class="seating-overlay">
-                    <div class="seat-zone vip-zone" data-type="vip" style="top: 15%; left: 48%; width: 4%; height: 8%;" title="VIP Arrangement"></div>
-                    <div class="seat-zone standing-zone" data-type="staanplaats" style="top: 35%; left: 38%; width: 24%; height: 25%;" title="Staanplaatsen"></div>
-                    <div class="seat-zone platina-zone" data-type="platina" style="top: 12%; left: 40%; width: 6%; height: 8%;" title="Zitplaats Platina"></div>
-                    <div class="seat-zone platina-zone" data-type="platina" style="top: 12%; left: 47%; width: 6%; height: 8%;" title="Zitplaats Platina"></div>
-                    <div class="seat-zone platina-zone" data-type="platina" style="top: 12%; left: 54%; width: 6%; height: 8%;" title="Zitplaats Platina"></div>
-                    <div class="seat-zone gold-zone" data-type="goud" style="top: 15%; left: 12%; width: 8%; height: 12%;" title="Zitplaats Goud"></div>
-                    <div class="seat-zone gold-zone" data-type="goud" style="top: 15%; left: 80%; width: 8%; height: 12%;" title="Zitplaats Goud"></div>
-                    <div class="seat-zone silver-zone" data-type="zilver" style="top: 30%; left: 12%; width: 8%; height: 15%;" title="Zitplaats Zilver"></div>
-                    <div class="seat-zone silver-zone" data-type="zilver" style="top: 30%; left: 80%; width: 8%; height: 15%;" title="Zitplaats Zilver"></div>
-                    <div class="seat-zone bronze-zone" data-type="brons" style="top: 30%; left: 8%; width: 4%; height: 10%;" title="Zitplaats Brons"></div>
-                    <div class="seat-zone bronze-zone" data-type="brons" style="top: 30%; left: 88%; width: 4%; height: 10%;" title="Zitplaats Brons"></div>
-                    <div class="seat-zone accessible-zone" data-type="mindervaliden" style="top: 62%; left: 48%; width: 4%; height: 3%;" title="Mindervaliden"></div>
+                    <h2>YE LIVE CONCERT - GELREDOME - NETHERLANDS</h2>
+                    <p class="event-datetime">06-06-2026 18:00 - 06-06-2026 23:00</p>
+                    <p class="event-location">GelreDome - Batavierenweg 25, 6841 HN Arnhem, Netherlands</p>
                 </div>
             </div>
 
-            <div class="legend">
-                <h4>Legend</h4>
-                <div class="legend-items">
-                    <div class="legend-item"><span class="legend-color vip"></span> VIP Arrangement - €299</div>
-                    <div class="legend-item"><span class="legend-color platina"></span> Zitplaats Platina - €199</div>
-                    <div class="legend-item"><span class="legend-color goud"></span> Zitplaats Goud - €149</div>
-                    <div class="legend-item"><span class="legend-color zilver"></span> Zitplaats Zilver - €99</div>
-                    <div class="legend-item"><span class="legend-color brons"></span> Zitplaats Brons - €79</div>
-                    <div class="legend-item"><span class="legend-color staanplaats"></span> Staanplaatsen - €89</div>
-                    <div class="legend-item"><span class="legend-color mindervaliden"></span> Mindervaliden - €89</div>
-                </div>
-            </div>
-        </section>
+            <!-- Standing Tickets Section -->
+            <div class="ticket-section">
+                <button class="section-toggle" onclick="toggleSection('standing')">
+                    <span>Standing Tickets</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div id="standing" class="ticket-list">
+                    <p class="section-description">Both left and right side tickets grant a comparable view of the podium.</p>
+                    
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>General Admission (Left) - Entrance B/M</h3>
+                            <p class="ticket-price">€ 89,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
+                    </div>
 
-        <section class="tickets-section">
-            <h3>Select Your Tickets</h3>
-            
-            <div class="tickets-grid">
-                <div class="ticket-card" data-type="vip">
-                    <div class="ticket-header" style="background: #9b59b6;">
-                        <h4>VIP Arrangement</h4>
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>General Admission (Right) - Entrance E/L</h3>
+                            <p class="ticket-price">€ 89,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <div class="ticket-body">
-                        <p class="price">€299.00</p>
-                        <ul>
-                            <li>Premium seating</li>
-                            <li>Exclusive VIP area access</li>
-                            <li>Complimentary drinks</li>
-                            <li>Limited availability</li>
-                        </ul>
-                        <button onclick="selectTicket('vip')">Select</button>
-                    </div>
-                </div>
 
-                <div class="ticket-card" data-type="platina">
-                    <div class="ticket-header" style="background: #00FFFF;">
-                        <h4>Zitplaats Platina</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€199.00</p>
-                        <ul>
-                            <li>Best view guaranteed</li>
-                            <li>Premium seating sections</li>
-                            <li>Perfect stage view</li>
-                        </ul>
-                        <button onclick="selectTicket('platina')">Select</button>
-                    </div>
-                </div>
-
-                <div class="ticket-card" data-type="goud">
-                    <div class="ticket-header" style="background: #FFA500;">
-                        <h4>Zitplaats Goud</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€149.00</p>
-                        <ul>
-                            <li>Excellent seating</li>
-                            <li>Great stage visibility</li>
-                            <li>Comfortable seats</li>
-                        </ul>
-                        <button onclick="selectTicket('goud')">Select</button>
-                    </div>
-                </div>
-
-                <div class="ticket-card" data-type="zilver">
-                    <div class="ticket-header" style="background: #C0C0C0;">
-                        <h4>Zitplaats Zilver</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€99.00</p>
-                        <ul>
-                            <li>Good seating</li>
-                            <li>Clear stage view</li>
-                            <li>Value for money</li>
-                        </ul>
-                        <button onclick="selectTicket('zilver')">Select</button>
-                    </div>
-                </div>
-
-                <div class="ticket-card" data-type="brons">
-                    <div class="ticket-header" style="background: #CD7F32;">
-                        <h4>Zitplaats Brons</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€79.00</p>
-                        <ul>
-                            <li>Standard seating</li>
-                            <li>Affordable option</li>
-                            <li>Full concert experience</li>
-                        </ul>
-                        <button onclick="selectTicket('brons')">Select</button>
-                    </div>
-                </div>
-
-                <div class="ticket-card" data-type="staanplaats">
-                    <div class="ticket-header" style="background: #FF6600;">
-                        <h4>Staanplaatsen</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€89.00</p>
-                        <ul>
-                            <li>Standing area</li>
-                            <li>Close to the stage</li>
-                            <li>Ultimate concert vibe</li>
-                        </ul>
-                        <button onclick="selectTicket('staanplaats')">Select</button>
-                    </div>
-                </div>
-
-                <div class="ticket-card" data-type="mindervaliden">
-                    <div class="ticket-header" style="background: #90EE90;">
-                        <h4>Mindervaliden</h4>
-                    </div>
-                    <div class="ticket-body">
-                        <p class="price">€89.00</p>
-                        <ul>
-                            <li>Accessible seating</li>
-                            <li>Wheelchair friendly</li>
-                            <li>Companion seat included</li>
-                        </ul>
-                        <button onclick="selectTicket('mindervaliden')">Select</button>
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Golden Circle - Entrance B/E/L/M <span class="info-icon">ℹ</span></h3>
+                            <p class="ticket-price">€ 149,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <div id="orderModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Complete Your Order</h3>
-                <form id="orderForm">
-                    <div class="form-group">
-                        <label>Ticket Type</label>
-                        <input type="text" id="ticketTypeName" readonly>
+            <!-- Seated Tickets Section -->
+            <div class="ticket-section">
+                <button class="section-toggle" onclick="toggleSection('seated')">
+                    <span>Seated Tickets</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+                <div id="seated" class="ticket-list">
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Front Seats P1</h3>
+                            <p class="ticket-price">€ 299,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <div class="form-group">
-                        <label>Quantity</label>
-                        <select id="quantity" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                        </select>
+
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Rang 1</h3>
+                            <p class="ticket-price">€ 199,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" id="name" required>
+
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Rang 1 - Gold</h3>
+                            <p class="ticket-price">€ 149,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" id="email" required>
+
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Rang 1 - Silver</h3>
+                            <p class="ticket-price">€ 99,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <div class="total">
-                        <strong>Total: €<span id="totalPrice">0.00</span></strong>
+
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Rang 2</h3>
+                            <p class="ticket-price">€ 79,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
                     </div>
-                    <button type="submit" class="btn-primary">Proceed to Payment</button>
-                </form>
+
+                    <div class="ticket-item">
+                        <div class="ticket-details">
+                            <h3>Accessible Seating</h3>
+                            <p class="ticket-price">€ 89,00 + € 3,95 servicekosten.</p>
+                        </div>
+                        <button class="ticket-status sold-out">Uitverkocht</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
